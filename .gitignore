@@ -3,12 +3,10 @@ Thumbs.db
 .DS_Store
 .idea
 *.suo
-*.sublime-project
-*.sublime-workspace
+
 
 # Vendors
 node_modules/
 
 # Build
-dist/
 /npm-debug.log

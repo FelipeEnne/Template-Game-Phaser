@@ -1,7 +1,7 @@
 # Template Game (Phaser)
 
 
-Template to start creating a game using Phaser 3 - Base on <a herf='https://phasertutorials.com/creating-a-phaser-3-template-part-1/'>Phaser 3 Webpack Project Template</a> 
+Template to start creating a game using Phaser 3 - Base on <a herf='https://phasertutorials.com/creating-a-phaser-3-template-part-1/'>Phaser 3 Webpack Project Template</a>  and <a herf='https://snowbillr.github.io/blog/2018-04-09-a-modern-web-development-setup-for-phaser-3/'>A Modern Web Development Setup For Phaser 3</a>
 
 
 ### Requirements
@@ -30,6 +30,7 @@ Template to start creating a game using Phaser 3 - Base on <a herf='https://phas
 # Run to start
 
 npm install
+yarn init
 
 
 ### Credits
