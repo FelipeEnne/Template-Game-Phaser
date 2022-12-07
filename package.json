@@ -23,7 +23,7 @@
     "raw-loader": "^0.5.1",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.0.0",
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   },
   "dependencies": {
     "phaser": "^3.0.0"
