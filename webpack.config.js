@@ -1,16 +1,14 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: {
-    app: './src/index.js',
-    'production-dependencies': ['phaser']
-  },
+  entry: './src/index.js',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'main.js',
+    clean: true,
   },
 
   module: {
@@ -21,17 +19,41 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.css$/i,
-        include: path.resolve(__dirname, 'assets/style'),
         use: ['style-loader', 'css-loader'],
-      }
-    ]
+      },
+    ],
   },
 
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public/index.html'),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'assets',
+          to: 'assets',
+          noErrorOnMissing: true,
+        },
+      ],
+    }),
+  ],
 
-}
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+    },
+    port: 8080,
+    hot: true,
+  },
+
+  performance: {
+    hints: false,
+  },
+};
